@@ -8,6 +8,10 @@ CREATE TABLE AnimalSources (
     EthicsState TEXT NOT NULL,
     Country TEXT,
     Coordinates TEXT,
+    LogoBase64 TEXT,
+    Website TEXT,
+    Description TEXT,
+    OtherValuesJSON TEXT,
     Animal TEXT
 );
 

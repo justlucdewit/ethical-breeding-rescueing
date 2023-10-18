@@ -20,11 +20,13 @@ async function createAnimalSource() {
     const animal = await askQuestion('Enter the Animal (comma-separated list): ');
     const country = await askQuestion('Enter the Country: ');
     const coordinates = await askQuestion('Enter the Coordinates: ');
+    const website = await askQuestion('Enter the Website: ');
+    const description = await askQuestion('Enter the Description: ');
     
     try {
         await dbRun(
-            'INSERT INTO AnimalSources (Name, Email, PhoneNumber, Type, Animal, EthicsState, Country, Coordinates) VALUES (?, ?, ?, ?, ?, \'pre-review\', ?, ?)',
-            [name, email, phoneNumber, type, animal, country, coordinates]
+            'INSERT INTO AnimalSources (Name, Email, PhoneNumber, Type, Animal, EthicsState, Country, Coordinates, Website, Description) VALUES (?, ?, ?, ?, ?, \'pre-review\', ?, ?, ?, ?)',
+            [name, email, phoneNumber, type, animal, country, coordinates, website, description]
         );
         console.log('\nAnimal source inserted successfully.');
         rl.prompt();
